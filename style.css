@@ -1,0 +1,217 @@
+/* =========================
+   🔹 Root Variables
+========================= */
+:root {
+  --bg-light: linear-gradient(135deg, #9d8ce5, #a2a0ec);
+  --navbar-light: linear-gradient(90deg, #070707, #8ab9f3);
+  --accent-1: #3fc592;
+  --accent-2: #78cee8;
+  --text-dark: #000;
+  --text-light: #f5f5f5;
+}
+
+/* =========================
+   🔹 Global Styles
+========================= */
+body {
+  scroll-behavior: smooth;
+  font-family: "Poppins", sans-serif;
+  background: var(--bg-light);
+  transition: background 0.6s ease, color 0.6s ease;
+  overflow-x: hidden;
+}
+
+section {
+  padding: 80px 0;
+  transition: background 0.6s ease, color 0.6s ease;
+}
+
+body, .navbar, footer, .portfolio-item, input, textarea {
+  transition: background-color 0.6s ease, color 0.6s ease, border-color 0.6s ease, box-shadow 0.6s ease;
+}
+
+/* =========================
+   🔹 Navbar Styles
+========================= */
+.navbar {
+  background: var(--navbar-light);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(110, 173, 218, 0.2);
+  transition: background 0.6s ease, padding 0.3s ease;
+  padding: 20px 40px;
+}
+
+.navbar.scrolled {
+  padding: 10px 40px;
+  background: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(20px);
+}
+
+.navbar .nav-link.active {
+  background: linear-gradient(45deg, var(--accent-1), var(--accent-2));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  font-weight: bold;
+}
+
+.navbar .nav-link:hover {
+  color: #111 !important;
+  transform: scale(1.08);
+  transition: transform 0.3s ease;
+}
+
+/* =========================
+   🔹 Intro Text
+========================= */
+.intro-text {
+  font-size: 1.3rem;
+  background: linear-gradient(90deg, #020202, #5dae5c);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  text-align: center;
+  transition: all 0.5s ease;
+}
+
+/* =========================
+   🔹 Portfolio Cards
+========================= */
+.portfolio-item {
+  border: 1px solid rgba(123, 147, 171, 0.3);
+  padding: 20px;
+  border-radius: 20px;
+  background: rgba(69, 101, 107, 0.2);
+  backdrop-filter: blur(10px);
+  transition: transform 0.4s ease, box-shadow 0.4s ease, background 0.6s ease;
+}
+
+.portfolio-item:hover {
+  transform: translateY(-10px) scale(1.03);
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+  background: linear-gradient(135deg, #c78ef3, #71be81);
+}
+
+/* =========================
+   🔹 Backgrounds
+========================= */
+.bg-gradient {
+  background: linear-gradient(135deg, #529abe, #4f517e);
+  transition: background 0.6s ease;
+}
+
+.animated-bg {
+  background: linear-gradient(-45deg, #e98585, #ee0979, #d34bf5, #070707);
+  background-size: 400% 400%;
+  animation: bgGradientShift 15s ease infinite;
+}
+
+@keyframes bgGradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* =========================
+   🔹 Reveal Animations
+========================= */
+.reveal {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 1s ease, transform 1s ease;
+}
+.reveal.active {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* Extra Animations */
+.animate-fade {
+  animation: fadeIn 2s ease-in-out;
+}
+.animate-zoom {
+  animation: zoomIn 1.5s ease-in-out;
+}
+.animate-hover:hover {
+  animation: pulse 0.8s ease-in-out;
+}
+
+/* Keyframes */
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
+}
+@keyframes zoomIn {
+  from { transform: scale(0.9); opacity: 0; }
+  to { transform: scale(1); opacity: 1; }
+}
+@keyframes pulse {
+  0% { transform: scale(1); }
+  50% { transform: scale(1.08); }
+  100% { transform: scale(1); }
+}
+
+/* =========================
+   🔹 Gradient Text
+========================= */
+.gradient-text {
+  background: linear-gradient(270deg, #8e5d5d, #f95555, #c608a0, #0073ffa3);
+  background-size: 600% 600%;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: gradientShift 8s ease infinite;
+  font-weight: bold;
+  display: inline-block;
+}
+@keyframes gradientShift {
+  0% { background-position: 0% 50%; }
+  50% { background-position: 100% 50%; }
+  100% { background-position: 0% 50%; }
+}
+
+/* =========================
+   🔹 About Section
+========================= */
+.about-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 40px;
+  flex-wrap: wrap;
+  text-align: left;
+  object-position: right to image;
+}
+
+.about-image img {
+  width: 280px;
+  height: auto;
+  border-radius: 20px;
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.2);
+  transition: transform 0.3s ease;
+  object-position: left;
+}
+
+.about-image img:hover {
+  transform: scale(1.05);
+}
+
+.about-text {
+  max-width: 600px;
+}
+
+/* =========================
+   🔹 Responsive Tweaks
+========================= */
+@media (max-width: 768px) {
+  section {
+    padding: 60px 20px;
+  }
+  .intro-text {
+    font-size: 1.1rem;
+  }
+  .navbar {
+    padding: 15px 20px;
+  }
+  .about-container {
+    flex-direction: column;
+    text-align: center;
+  }
+}
