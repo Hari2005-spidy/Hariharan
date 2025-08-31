@@ -1,228 +1,142 @@
 <!DOCTYPE html>
-<<!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Hariharan Rajendran| Portfolio</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet">
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Hariharan Rajendran - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
-<body data-bs-spy="scroll" data-bs-target="#navbarNav" data-bs-offset="70" tabindex="0">
-  <!-- Navbar -->
-  <nav class="navbar navbar-expand-lg navbar-dark bg-dark fixed-top shadow">
-    <div class="container">
-      <a class="navbar-brand fw-bold text-info" href="#home">Hariharan Rajendran</a>
-      <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-        <span class="navbar-toggler-icon"></span>
-      </button>
-      <div class="collapse navbar-collapse" id="navbarNav">
-        <ul class="navbar-nav ms-auto">
-          <li class="nav-item"><a class="nav-link" href="#home">Home</a></li>
-          <li class="nav-item"><a class="nav-link" href="#about">About</a></li>
-          <li class="nav-item"><a class="nav-link" href="#resume">Resume</a></li>
-          <li class="nav-item"><a class="nav-link" href="#personal skills">Personal skills</a></li>
-          <li class="nav-item"><a class="nav-link" href="#certifications">Certifications</a></li>
-          <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
-        </ul>
+<body>
+  <aside class="side-navbar">
+    <div class="sidebar-header">
+      <img src="my photo.jpg" alt="Hariharan Rajendran" class="sidebar-photo" />
+      <h4>Hariharan Rajendran</h4>
+      <div class="sidebar-location">
+        Perambular, Tamil Nadu, India
       </div>
     </div>
-  </nav>
+    <nav>
+      <a href="#home" class="nav-link active">Home</a>
+      <a href="#about" class="nav-link">About</a>
+      <a href="#skills" class="nav-link">Personal Skills</a>
+      <a href="#certifications" class="nav-link">Certifications</a>
+      <a href="#resume" class="nav-link">Resume</a>
+      <a href="#contact" class="nav-link">Contact</a>
+    </nav>
+  </aside>
 
-  <!-- Home -->
-  <section id="home" class="text-center reveal bg-gradient text-white">
-    <div class="container py-5">
-      <h1 class="display-3 fw-bold animate-fade">Welcome to My Portfolio</h1>
-      <p class="lead animate-zoom">Showcasing my work, skills, and passions</p>
-    </div>
-  </section>
+  <div id="content">
+    <section id="home">
+      <h1>Welcome to My Portfolio</h1>
+      <p>Showcasing my work, skills, and passions</p>
+    </section>
 
-  <!-- About -->
-  <section id="about" class="reveal">
-    <div class="container">
-      <h2 class="text-primary">About Me</h2>
-      <p class="intro-text">
-        Hi, I am <strong>Hariharan Rajendran</strong>, an innovative and detail-driven third-year <strong>B.Tech student in Artificial Intelligence and Data Science</strong> with a stellar <strong>CGPA of 7.99</strong> and a spotless academic track record. Fueled by a passion for transforming raw data into powerful insights, I am currently sharpening my expertise through an <strong>advanced Data Analytics program</strong> to stay ahead in the fast-evolving tech landscape. My portfolio boasts industry-recognized certifications that reflect a relentless drive for growth and mastery of cutting-edge technologies. Curious, committed, and solution-oriented, I am ready to craft intelligent, data-driven strategies that create real-world impact.
-     </p>
-     <img  width="300px" src="my photo.jpg" alt="">
-    </div>
-  </section>
+    <section id="about" class="about-container">
+      <div class="about-image">
+        <img src="my photo.jpg" alt="Hariharan Rajendran" />
+      </div>
+      <div class="about-text">
+        <h2>About Me</h2>
+        <p><strong>Hariharan Rajendran</strong> is an innovative and detail-driven third-year <strong>B.Tech student in Artificial Intelligence and Data Science</strong> with a stellar <strong>CGPA of 7.99</strong> and a spotless academic track record. Fueled by a passion for transforming raw data into powerful insights, currently sharpening skills through an <strong>advanced Data Analytics program</strong> to stay ahead in the evolving tech landscape.</p>
+        <p>Curious, committed, and solution-oriented, ready to craft intelligent, data-driven strategies that create real-world impact.</p>
+      </div>
+    </section>
 
-  <!-- Resume -->
-  <section id="resume" class="bg-light reveal">
-    <div class="container">
-      <h2 class="text-success">Resume</h2>
+    <section id="skills">
+      <h2>Personal Skills & Internships</h2>
+      <ul>
+        <li><strong>Internship 1:</strong> DATA ANALYTICS based on MS EXCEL</li>
+        <li><strong>Internship 2:</strong> ARTIFICIAL INTELLIGENCE</li>
+        <li><strong>Internship 3:</strong> MACHINE LEARNING</li>
+        <li><strong>HTML:</strong> Full Knowledge</li>
+        <li><strong>MICROSOFT OFFICE:</strong> 80% Knowledge on Office Tools</li>
+        <li><strong>CODING LANGUAGES:</strong> 80% Python, 70% JavaScript</li>
+      </ul>
+    </section>
+
+    <section id="certifications">
+      <h2>Certifications</h2>
+      <ul class="certifications-list">
+        <li class="certification-item">
+          <img src="CELONIS ACADMEIC PROCESS.jpg" alt="CELONIS ACADEMIC PROCESS Certificate" />
+          <span>CELONIS ACADEMIC PROCESS - <em>FROM "CELONIS"</em></span>
+        </li>
+        <li class="certification-item">
+          <img src="CELONIS BUSINESS.jpg" alt="CELONIS BUSINESS Certificate" />
+          <span>CELONIS BUSINESS - <em>FROM "CELONIS"</em></span>
+        </li>
+        <li class="certification-item">
+          <img src="CELONIS FOUNDATION.jpg" alt="CELONIS FOUNDATION Certificate" />
+          <span>CELONIS FOUNDATION - <em>FROM "CELONIS"</em></span>
+        </li>
+        <li class="certification-item">
+          <img src="MONGODB BASIC.jpg" alt="MONGODB BASIC Certificate" />
+          <span>MONGODB BASIC - <em>FROM "MONGODB"</em></span>
+        </li>
+        <li class="certification-item">
+          <img src="MONGODB SQL.jpg" alt="MONGODB SQL Certificate" />
+          <span>MONGODB SQL - <em>FROM "MONGODB"</em></span>
+        </li>
+        <li class="certification-item">
+          <img src="CPP.jpg" alt="CPP Certificate" />
+          <span>CPP Certificate</span><Form>SPOKEN TUTORIAL</Form>
+        </li>
+        <li class="certification-item">
+          <img src="DIPLOMA IN MICROSOFT.jpg" alt="DIPLOMA IN MICROSOFT Certificate" />
+          <span>DIPLOMA IN MICROSOFT Certificate</span><Form>CCI COMPUTER EDUCATION</Form>
+        </li>
+        <li class="certification-item">
+          <img src="ORACLE ERP.jpg" alt="ORACLE ERP Certificate" />
+          <span>ORACLE ERP Certificate</span><Form>ORACLE</Form>
+        </li>
+        <li class="certification-item">
+          <img src="ORACLE HCM.jpg" alt="ORACLE HCM Certificate" />
+          <span>ORACLE HCM Certificate</span><Form>ORACLE</Form>
+        </li>
+        <li class="certification-item">
+          <img src="C.jpg" alt="DIPLOMA IN MICROSOFT Certificate" />
+          <span>DIPLOMA IN MICROSOFT Certificate</span><Form>SPOKEN TUTORIAL</Form>
+        </li>
+      </ul>
+    </section>
+
+    <section id="resume">
+      <h2>Resume</h2>
       <ul>
         <li>B.Tech (Artificial Intelligence and Data Science) — 3rd Year • CGPA: 7.99</li>
         <li>Currently pursuing an Advanced Data Analytics program</li>
         <li>Skilled in HTML, CSS, JavaScript, MS Office</li>
-        <li>Internship at [Novi Tech R&D Pvt Ltd]</li>
+        <li>Internship at Novi Tech R&amp;D Pvt Ltd</li>
         <li>Strong problem-solving and research abilities</li>
       </ul>
-      <a href="my resume.pdf" class="btn btn-success shadow-sm" target="_blank">View Full Resume</a>
-    </div>
-  </section>
 
-  <!-- Personal skills -->
-  <section id="personal skills" class="reveal">
-    <div class="container">
-      <h2 class="text-warning">Personal skills</h2>
-      <div class="row g-4">
-        <!-- TODO: Replace these placeholders with your real projects & links/images -->
-        <div class="col-md-4">
-          <div class="personal skills-item reveal animate-hover">
-            <h5>INTERNSHIP 1</h5>
-            <p>Internship On "DATA ANALYTICS" based on MS EXCEL.</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="personal skills-item reveal animate-hover">
-            <h5>INTERNSHIP 2</h5>
-            <p>Intership on "ARTIFICIAL INTELLIGENCE".</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="personal skills-item reveal animate-hover">
-            <h5>INTERNSHIP 3</h5>
-            <p>Internship on "MACHINE LEARNING".</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="personal skills-item reveal animate-hover">
-            <h5>HTML</h5>
-            <p>Has a full knowledge of HTML</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="personal skills-item reveal animate-hover">
-            <h5>MICROSOFT OFFICE</h5>
-            <p>Has a 80 % Knowledge on OFFICE TOOLS</p>
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="personal skills-item reveal animate-hover">
-            <h5>CODING LANGUAGE</h5>
-            <p>Has a 80 % Knowledge of PYTHON and a 70 % Knowledge of JavaScript </p>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+      <h3>View My Resume</h3>
+      <p><a href="my resume.pdf" target="_blank" rel="noopener noreferrer" download>Click here to open/download my resume (PDF)</a></p>
+    </section>
 
-  <!-- Certifications -->
-  <section id="certifications" class="bg-light reveal">
-    <div class="container">
-      <h2 class="text-info">Certifications</h2>
-      <div class="row g-5">
-        <!-- TODO: Add your actual certifications when you share them -->
-        <div class="col-md-4">
-          <div class="portfolio-item animate-hover">
-            <h5>MONGODB BASIC</h5>
-            <P>FROM "MONGODB"</P>
-            <img width="350px" height="400px" src="MONGODB BASIC.jpg" alt="">
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="portfolio-item animate-hover">
-            <h5>MONGODB SQL</h5>
-            <p>FROM "MONGODB"</p>
-            <img width="350px" height="400px" src="MONGODB SQL.jpg" alt="">
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="portfolio-item animate-hover">
-            <h5><!-- CELONIS ACADMEIC PROCESS --></h5>
-            <p>FROM "CELONIS"</p>
-            <img width="350px" height="400px" src="CELONIS ACADMEIC PROCESS.jpg" alt="">
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="portfolio-item animate-hover">
-            <h5>CELONIS BUSINESS</h5>
-            <p>FROM "CELONIS"</p>
-            <img width="350px" height="200px" src="CELONIS BUSINESS.jpg" alt="">
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="portfolio-item animate-hover">
-            <h5>CELONIS FOUNDATION</h5>
-            <p>FROM "CELONIS"</p>
-            <img width="350px" height="200px" src="CELONIS FOUNDATION.jpg" alt="">
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="portfolio-item animate-hover">
-            <h5>DIPLOMA IN MICROSOFT</h5>
-            <p>CCI COMPUTER EDUCATION"</p>
-            <img width="300px" height="200px" src="DIPLOMA IN MICROSOFT.jpg" alt="">
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="portfolio-item animate-hover">
-            <h5>ORACLE ERP</h5>
-            <p>FROM "ORCALE"</p>
-            <img width="350px" height="200px" src="ORACLE ERP.jpg" alt="">
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="portfolio-item animate-hover">
-            <h5>ORCALE HCM</h5>
-             <p>FROM "ORCALE"</p>
-            <img width="350px" height="200px" src="ORACLE HCM.jpg" alt="">
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="portfolio-item animate-hover">
-            <h5>C PROGRAMMING</h5>
-             <p>FROM"SPOKEN TUTORIAL"</p>
-            <img width="350px" height="200px" src="C.jpg" alt="">
-          </div>
-        </div>
-        <div class="col-md-4">
-          <div class="portfolio-item animate-hover">
-            <h5>CPP PROGRAMMING</h5>
-             <p>FROM "SPOKEN TUTORIAL"</p>
-            <img width="350px" height="200px" src="CPP.jpg" alt="">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
+    <section id="contact">
+      <h2>Contact</h2>
+      <p><strong>Location:</strong> 6/70, Kattukotai Maruthadi Naranamangalam (po), Perambular, Tamilnadu-621109 INDIA</p>
+      <p><strong>Email:</strong> <a href="mailto:inhari2005@gmail.com">inhari2005@gmail.com</a></p>
+      <p><strong>Phone:</strong> <a href="tel:+918838059374">8838059374</a></p>
 
-  <!-- Contact -->
-  <section id="contact" class="reveal">
-    <div class="container">
-      <h2 class="text-danger">Contact</h2>
-      <p>If you'd like to get in touch, feel free to drop a message below:</p>
-      <form>
-        <div class="mb-3">
-          <label class="form-label">Name</label>
-          <input type="text" class="form-control" placeholder="Your Name">
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Email</label>
-          <input type="email" class="form-control" placeholder="Your Email">
-        </div>
-        <div class="mb-3">
-          <label class="form-label">Message</label>
-          <textarea class="form-control" rows="4" placeholder="Your Message"></textarea>
-        </div>
-        <button type="submit" class="btn btn-danger shadow-sm">Send</button>
+      <h3>Send me a message</h3>
+      <form action="https://formspree.io/f/mwkawojo" method="POST" class="contact-form">
+        <label for="name">Your Name:</label><br />
+        <input type="text" id="name" name="name" required /><br /><br />
+
+        <label for="email">Your Email:</label><br />
+        <input type="email" id="email" name="_replyto" required /><br /><br />
+
+        <label for="comment">Your Comment:</label><br />
+        <textarea id="comment" name="message" rows="5" required></textarea><br /><br />
+
+        <button type="submit">Send</button>
       </form>
-      <p class="mt-3">Or email me directly: <a href="mailto:inhari2005@gmail.com">inhari2005@gmail.com</a></p>
-      <p class="mt-3">Or ring me directly: <a href="call:8838059374">8838059374</a></p>
-    </div>
-  </section>
+    </section>
+  </div>
 
-  <!-- Footer -->
-  <footer class="text-center bg-dark text-white py-3">
-    <p>© 2025 Hariharan Rajendran. All rights reserved.</p>
-  </footer>
-
-  <!-- Dark mode transition overlay -->
-  <div id="theme-transition"></div>
-
-  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js"></script>
   <script src="script.js"></script>
 </body>
 </html>
