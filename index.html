@@ -5,7 +5,356 @@
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <title>Hariharan Rajendran - Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet" />
-  <link rel="stylesheet" href="style.css" />
+  <style>
+    :root {
+      --bg-light: #f5f7fa;
+      --navbar-light: #f0f4f8;
+      --accent-1: #a6c0fe;
+      --accent-2: #f68084;
+      --text-dark: #1a1a1a;
+      --text-light: #004080;
+      --card-bg: #ffffff;
+      --shadow-color: rgba(0, 0, 0, 0.1);
+      --home-gradient-start: #a6c0fe;
+      --home-gradient-middle1: #f68084;
+      --home-gradient-middle2: #ffcab3;
+      --home-gradient-end: #a6c0fe;
+    }
+
+    body {
+      scroll-behavior: smooth;
+      font-family: "Poppins", sans-serif;
+      background: var(--bg-light);
+      color: var(--text-dark);
+      margin: 0;
+      padding: 0;
+      overflow-x: hidden;
+      transition: background 0.6s ease, color 0.6s ease;
+    }
+
+    #home {
+      background: linear-gradient(-45deg, var(--home-gradient-start), var(--home-gradient-middle1), var(--home-gradient-middle2), var(--home-gradient-end));
+      background-size: 400% 400%;
+      animation: gradientBG 15s ease infinite;
+      color: var(--text-dark);
+      text-align: center;
+      padding: 120px 20px;
+      border-radius: 20px;
+      box-shadow: 0 6px 30px rgba(0,0,0,0.1);
+    }
+
+    @keyframes gradientBG {
+      0% { background-position: 0% 50%;}
+      50% { background-position: 100% 50%;}
+      100% { background-position: 0% 50%;}
+    }
+
+    #home h1, #home p {
+      font-family: 'Poppins', sans-serif;
+      margin: 0 auto;
+      max-width: 700px;
+      opacity: 0;
+      transform: scale(0.9);
+      animation-fill-mode: forwards;
+    }
+    #home h1 {
+      font-weight: 800;
+      font-size: 3.5rem;
+      text-shadow: 2px 2px 10px rgba(246, 128, 132, 0.6);
+      animation: fadeZoomIn 1.2s ease forwards;
+    }
+    #home p {
+      font-weight: 300;
+      font-size: 1.5rem;
+      margin-top: 20px;
+      color: #333;
+      animation: fadeZoomIn 1.2s ease forwards;
+      animation-delay: 0.6s;
+    }
+
+    @keyframes fadeZoomIn {
+      to {
+        opacity: 1;
+        transform: scale(1);
+      }
+    }
+
+    .side-navbar {
+      background: var(--navbar-light);
+      color: var(--text-light);
+      border-right: 2px solid var(--accent-1);
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 250px;
+      height: 100vh;
+      overflow-y: auto;
+      padding-top: 1rem;
+      z-index: 1030;
+    }
+    .sidebar-header h4 {
+      color: var(--text-light);
+      font-weight: 800;
+      font-family: 'Poppins', sans-serif;
+      margin-bottom: 0.5rem;
+    }
+    .sidebar-header img.sidebar-photo {
+      width: 60px;
+      height: 60px;
+      border-radius: 50%;
+      border: 2px solid var(--accent-1);
+      object-fit: cover;
+      transition: transform 0.3s ease;
+    }
+    .sidebar-header img.sidebar-photo:hover {
+      transform: scale(1.1);
+    }
+    .side-navbar .nav-link {
+      color: var(--text-light);
+      font-weight: 600;
+      font-family: 'Poppins', sans-serif;
+      padding: 10px 20px;
+      display: block;
+      text-decoration: none;
+      border-radius: 8px;
+      transition: background 0.3s ease;
+      cursor: pointer;
+    }
+    .side-navbar .nav-link:hover,
+    .side-navbar .nav-link.active {
+      background: var(--accent-1);
+      color: white;
+      box-shadow: 0 2px 12px rgba(166, 206, 254, 0.5);
+    }
+    .side-navbar::-webkit-scrollbar {
+      width: 6px;
+    }
+    .side-navbar::-webkit-scrollbar-thumb {
+      background: var(--accent-1);
+      border-radius: 3px;
+    }
+    #content {
+      margin-left: 250px;
+      padding: 40px 30px;
+      transition: margin-left 0.3s ease;
+      font-family: 'Poppins', sans-serif;
+      color: var(--text-dark);
+    }
+    section {
+      background: var(--card-bg);
+      box-shadow: 0 6px 15px var(--shadow-color);
+      padding: 40px 30px;
+      margin-bottom: 40px;
+      border-radius: 15px;
+    }
+    .about-container {
+      display: flex;
+      gap: 40px;
+      align-items: center;
+      flex-wrap: nowrap;
+      max-width: 900px;
+      margin: 0 auto;
+      text-align: left;
+    }
+    .about-image img {
+      width: 220px;
+      height: auto;
+      border-radius: 50%;
+      box-shadow: 0 8px 20px var(--shadow-color);
+      transition: transform 0.3s ease;
+    }
+    .about-image img:hover {
+      transform: scale(1.05);
+    }
+    .about-text {
+      max-width: 520px;
+      color: var(--text-dark);
+    }
+    .certifications-list {
+      list-style: none;
+      padding: 0;
+      display: flex;
+      flex-wrap: wrap;
+      gap: 20px;
+    }
+    .certification-item {
+      max-width: 220px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      opacity: 0;
+      transform: translateY(40px);
+      animation-fill-mode: forwards;
+      animation-duration: 0.7s;
+      animation-timing-function: cubic-bezier(0.4, 0, 0.2, 1);
+      transition: transform 0.4s ease, box-shadow 0.4s ease, border-color 0.4s ease;
+      border: 3px solid transparent;
+      border-radius: 12px;
+      box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+    }
+    .certification-item img {
+      max-width: 100%;
+      border-radius: 12px;
+      pointer-events: none;
+      margin-bottom: 10px;
+    }
+    .certification-item:hover {
+      border-color: var(--accent-1);
+      box-shadow: 0 0 15px 3px rgba(166, 206, 254, 0.6);
+      background: rgba(166, 206, 254, 0.05);
+      transform: scale(1.1);
+      z-index: 12;
+      position: relative;
+    }
+    @keyframes fadeSlideUp {
+      0% {
+        opacity: 0;
+        transform: translateY(40px);
+      }
+      60% {
+        opacity: 1;
+        transform: translateY(-5px);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0);
+      }
+    }
+    .certification-item:nth-child(1) { animation-delay: 0.15s; }
+    .certification-item:nth-child(2) { animation-delay: 0.35s; }
+    .certification-item:nth-child(3) { animation-delay: 0.55s; }
+    .certification-item:nth-child(4) { animation-delay: 0.75s; }
+    .certification-item:nth-child(5) { animation-delay: 0.95s; }
+    .certification-item:nth-child(6) { animation-delay: 1.15s; }
+    .certification-item:nth-child(7) { animation-delay: 1.35s; }
+    .certification-item:nth-child(8) { animation-delay: 1.55s; }
+    .certification-item:nth-child(9) { animation-delay: 1.75s; }
+    .certification-item.active {
+      animation-name: fadeSlideUp;
+      opacity: 1;
+      transform: translateY(0);
+    }
+    .contact-form {
+      max-width: 500px;
+      margin-top: 20px;
+    }
+    .contact-form label {
+      font-weight: 600;
+      margin-bottom: 5px;
+      display: block;
+    }
+    .contact-form input[type="text"],
+    .contact-form input[type="email"],
+    .contact-form textarea {
+      width: 100%;
+      padding: 8px 10px;
+      margin-bottom: 15px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+      font-size: 1rem;
+      font-family: inherit;
+      resize: vertical;
+    }
+    .contact-form button {
+      background-color: var(--accent-1);
+      color: white;
+      padding: 12px 20px;
+      border: none;
+      border-radius: 6px;
+      font-size: 1.1rem;
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+    }
+    .contact-form button:hover {
+      background-color: var(--accent-2);
+    }
+    /* Resume Section Button (View Only - Animation + Mobile) */
+    .resume-view-wrap {
+      text-align: center;
+      margin-top: 25px;
+    }
+    @media (max-width: 768px) {
+      #content {
+        margin-left: 0;
+        padding: 20px;
+      }
+      .side-navbar {
+        width: 100%;
+        height: auto;
+        position: relative;
+        padding-top: 0.5rem;
+      }
+      .side-navbar .nav-link {
+        display: inline-block;
+        padding: 10px 15px;
+      }
+      .sidebar-header {
+        display: flex;
+        align-items: center;
+        justify-content: start;
+        gap: 10px;
+        padding-left: 20px;
+      }
+      .sidebar-header img.sidebar-photo {
+        width: 50px;
+        height: 50px;
+        border-width: 2px;
+      }
+      .sidebar-header h4 {
+        margin: 0;
+        font-size: 1.2rem;
+      }
+      .sidebar-location {
+        text-align: center;
+        padding-top: 10px;
+        border-top: none;
+      }
+      #home h1,
+      #home p {
+        color: black !important;
+        text-shadow: none !important;
+      }
+      .resume-view-wrap {
+        margin-top: 18px;
+      }
+      .pulse-gradient-btn {
+        font-size: 1.18rem;
+        padding: 16px 21px;
+        width: 95%;
+        display: block;
+        margin: 0 auto;
+      }
+    }
+
+    .pulse-gradient-btn {
+      display: inline-block;
+      font-family: 'Poppins',sans-serif;
+      font-weight: 700;
+      color: #fff;
+      background: linear-gradient(90deg, #a6c0fe 0%, #f68084 100%);
+      border: none;
+      border-radius: 12px;
+      padding: 14px 40px;
+      font-size: 1.15rem;
+      text-decoration: none;
+      box-shadow: 0 5px 15px rgba(166,192,254,0.15), 0 2px 8px #f68084a0;
+      transition: background 0.4s, transform 0.22s, box-shadow 0.22s;
+      cursor: pointer;
+      animation: pulseBtn 1.2s infinite;
+      position: relative;
+    }
+    .pulse-gradient-btn:hover, .pulse-gradient-btn:focus {
+      background: linear-gradient(90deg, #f68084 0%, #a6c0fe 100%);
+      transform: scale(1.06);
+      box-shadow: 0 8px 30px #f6808411, 0 2px 8px #a6c0fea0;
+    }
+    @keyframes pulseBtn {
+      0%    { box-shadow: 0 0 0 0 #f6808412; }
+      70%   { box-shadow: 0 0 0 14px #a6c0fe09; }
+      100%  { box-shadow: 0 0 0 0 #f6808412; }
+    }
+  </style>
 </head>
 <body>
   <aside class="side-navbar">
@@ -25,14 +374,12 @@
       <a href="#contact" class="nav-link">Contact</a>
     </nav>
   </aside>
-
   <div id="content">
     <section id="home">
       <h1>HARIHARANRAJENDRAN</h1>
-      <p>B.Tech Artificial Intelligence and Data Science Student
-At MAM School of Engineering</p>
+      <p>B.Tech Artificial Intelligence and Data Science Student<br>
+      At MAM School of Engineering</p>
     </section>
-
     <section id="about" class="about-container">
       <div class="about-image">
         <img src="my photo.jpg" alt="Hariharan Rajendran" />
@@ -43,7 +390,6 @@ At MAM School of Engineering</p>
         <p>Curious, committed, and solution-oriented, ready to craft intelligent, data-driven strategies that create real-world impact.</p>
       </div>
     </section>
-
     <section id="skills">
       <h2>Personal Skills & Internships</h2>
       <ul>
@@ -55,7 +401,6 @@ At MAM School of Engineering</p>
         <li><strong>CODING LANGUAGES:</strong> 80% Python, 70% JavaScript</li>
       </ul>
     </section>
-
     <section id="certifications">
       <h2>Certifications</h2>
       <ul class="certifications-list">
@@ -101,7 +446,6 @@ At MAM School of Engineering</p>
         </li>
       </ul>
     </section>
-
     <section id="resume">
       <h2>Resume</h2>
       <ul>
@@ -111,33 +455,69 @@ At MAM School of Engineering</p>
         <li>Internship at Novi Tech R&amp;D Pvt Ltd</li>
         <li>Strong problem-solving and research abilities</li>
       </ul>
-
-      <h3>View My Resume</h3>
-      <p><a href="my resume.pdf" target="_blank" rel="noopener noreferrer" download>Click here to open/download my resume (PDF)</a></p>
+      <div class="resume-view-wrap">
+        <a
+          href="my resume.pdf"
+          target="_blank"
+          rel="noopener noreferrer"
+          class="pulse-gradient-btn"
+          title="View Resume PDF (opens in new tab)">
+          &#128065; View My Resume
+        </a>
+      </div>
     </section>
-
     <section id="contact">
       <h2>Contact</h2>
       <p><strong>Location:</strong> 6/70, Kattukotai Maruthadi Naranamangalam (po), Perambular, Tamilnadu-621109 INDIA</p>
       <p><strong>Email:</strong> <a href="mailto:inhari2005@gmail.com">inhari2005@gmail.com</a></p>
       <p><strong>Phone:</strong> <a href="tel:+918838059374">8838059374</a></p>
-
       <h3>Send me a message</h3>
       <form action="https://formspree.io/f/mwkawojo" method="POST" class="contact-form">
         <label for="name">Your Name:</label><br />
         <input type="text" id="name" name="name" required /><br /><br />
-
         <label for="email">Your Email:</label><br />
         <input type="email" id="email" name="_replyto" required /><br /><br />
-
         <label for="comment">Your Comment:</label><br />
         <textarea id="comment" name="message" rows="5" required></textarea><br /><br />
-
         <button type="submit">Send</button>
       </form>
     </section>
   </div>
-
-  <script src="script.js"></script>
+  <script>
+    // Smooth scroll for sidebar nav links
+    document.querySelectorAll('.side-navbar .nav-link').forEach(link => {
+      link.addEventListener('click', e => {
+        e.preventDefault();
+        const target = document.querySelector(link.getAttribute('href'));
+        if (target) {
+          target.scrollIntoView({ behavior: 'smooth' });
+        }
+      });
+    });
+    // Highlight active sidebar nav link on scroll
+    const sections = document.querySelectorAll('section');
+    const navLinks = document.querySelectorAll('.side-navbar .nav-link');
+    window.addEventListener('scroll', () => {
+      let current = '';
+      sections.forEach(section => {
+        if (window.scrollY >= section.offsetTop - 150) {
+          current = section.id;
+        }
+      });
+      navLinks.forEach(link => {
+        link.classList.toggle('active', link.getAttribute('href') === `#${current}`);
+      });
+    });
+    // Animate certifications on scroll
+    const certItems = document.querySelectorAll('.certification-item');
+    const certSection = document.getElementById('certifications');
+    window.addEventListener('scroll', () => {
+      const certTop = certSection.getBoundingClientRect().top;
+      const windowHeight = window.innerHeight;
+      if (certTop < windowHeight - 100) {
+        certItems.forEach(item => item.classList.add('active'));
+      }
+    });
+  </script>
 </body>
 </html>
