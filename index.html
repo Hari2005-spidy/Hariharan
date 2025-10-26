@@ -8,78 +8,58 @@
   <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;600;800&display=swap" rel="stylesheet" />
   <style>
     :root {
-      --bg-light: #f2f6fb; /* Background color for page */
-      --navbar-light: #e9f1fb; /* Sidebar background */
-      --accent-1: #5b97fa; /* Primary accent blue */
-      --accent-2: #f68b8b; /* Accent pink */
-      --text-dark: #1e2229; /* Dark text color */
-      --text-light: #00518a; /* Light text color */
-      --card-bg: #fff; /* Card background */
-      --shadow-color: rgba(30,50,80,0.07); /* Shadow color */
-      --home-gradient-start: #cde3fa; /* Gradient start color */
-      --home-gradient-end: #fff3e0; /* Gradient end color */
+      --bg-light: #f2f6fb;
+      --navbar-light: #e9f1fb;
+      --accent-1: #5b97fa;
+      --accent-2: #f68b8b;
+      --text-dark: #1e2229;
+      --text-light: #00518a;
+      --card-bg: #fff;
+      --shadow-color: rgba(30,50,80,0.07);
+      --home-gradient-start: #cde3fa;
+      --home-gradient-end: #fff3e0;
     }
-
-    /* Body and base fonts */
     body {
-      font-family: "Poppins", sans-serif; /* Use Poppins font for modern look */
-      margin: 0; /* Remove default margin */
-      background: var(--bg-light); /* Light background color */
-      color: var(--text-dark); /* Default text color */
-      scroll-behavior: smooth; /* Smooth scrolling when clicking links */
+      font-family: "Poppins", sans-serif;
+      margin: 0;
+      background: var(--bg-light);
+      color: var(--text-dark);
+      scroll-behavior: smooth;
     }
-
-    /* Floating shapes that move subtly on screen */
     .floating-shapes span,
     .floating-shapes img {
-      position: absolute; /* Positioned absolutely to float independently */
-      opacity: 0.6; /* Slightly transparent */
-      animation: float 18s infinite linear, glowPulse 3s infinite alternate; /* Floating and glow animations */
-      z-index: 0; /* Behind other content */
+      position: absolute;
+      opacity: 0.6;
+      animation: float 18s infinite linear, glowPulse 3s infinite alternate;
+      z-index: 0;
     }
     .floating-shapes span.circle {
       width: 25px;
       height: 25px;
       border-radius: 50%;
-      background: rgba(91, 151, 250, 0.2); /* Light blue semi-transparent circles */
+      background: rgba(91, 151, 250, 0.2);
     }
     .floating-shapes span.triangle {
       width: 0;
       height: 0;
       border-left: 14px solid transparent;
       border-right: 14px solid transparent;
-      border-bottom: 24px solid rgba(246, 139, 139, 0.25); /* Pinkish triangles */
+      border-bottom: 24px solid rgba(246, 139, 139, 0.25);
     }
     .floating-shapes img {
       width: 42px;
       height: 42px;
     }
     @keyframes float {
-      0% {
-        top: 110%;
-        transform: translateX(0) rotate(0deg);
-      }
-      50% {
-        transform: translateX(30px) rotate(180deg);
-      }
-      100% {
-        top: -10%;
-        transform: translateX(-20px) rotate(360deg);
-      }
+      0% { top: 110%; transform: translateX(0) rotate(0deg);}
+      50% { transform: translateX(30px) rotate(180deg);}
+      100% { top: -10%; transform: translateX(-20px) rotate(360deg);}
     }
     @keyframes glowPulse {
-      0% {
-        box-shadow: 0 0 15px rgba(91, 151, 250, 0.6);
-      }
-      50% {
-        box-shadow: 0 0 25px rgba(91, 151, 250, 0.9);
-      }
-      100% {
-        box-shadow: 0 0 15px rgba(91, 151, 250, 0.6);
-      }
+      0% { box-shadow: 0 0 15px rgba(91, 151, 250, 0.6);}
+      50% {box-shadow: 0 0 25px rgba(91, 151, 250, 0.9);}
+      100% {box-shadow: 0 0 15px rgba(91, 151, 250, 0.6);}
     }
-
-    /* Glow effect for floating icons */
     .floating-icon {
       width: 50px;
       height: 50px;
@@ -89,22 +69,19 @@
       z-index: 1;
     }
     .glow-icon {
-      filter: drop-shadow(0 0 15px rgba(91, 151, 250, 0.8))
-        drop-shadow(0 0 25px rgba(246, 139, 139, 0.8));
+      filter: drop-shadow(0 0 15px rgba(91, 151, 250, 0.8)) drop-shadow(0 0 25px rgba(246, 139, 139, 0.8));
     }
-
-    /* Sidebar styles */
     .side-navbar {
       background: var(--navbar-light);
       color: var(--text-light);
       border-right: 1px solid var(--accent-1);
-      position: fixed; /* Sidebar fixed to left */
+      position: fixed;
       top: 0;
       left: 0;
       width: 230px;
-      height: 100vh; /* Full viewport height */
+      height: 100vh;
       padding-top: 1rem;
-      z-index: 1000; /* Stay on top of content */
+      z-index: 1000;
       transition: left 0.3s;
     }
     .sidebar-header {
@@ -117,15 +94,11 @@
       border-radius: 50%;
       border: 2px solid var(--accent-1);
       object-fit: cover;
-      animation: pulseGlow 3s infinite alternate; /* Photo glow effect */
+      animation: pulseGlow 3s infinite alternate;
     }
     @keyframes pulseGlow {
-      from {
-        box-shadow: 0 0 12px var(--accent-1);
-      }
-      to {
-        box-shadow: 0 0 25px var(--accent-2);
-      }
+      from { box-shadow: 0 0 12px var(--accent-1);}
+      to { box-shadow: 0 0 25px var(--accent-2);}
     }
     nav .nav-link {
       display: block;
@@ -134,17 +107,15 @@
       text-decoration: none;
       color: var(--text-light);
       border-radius: 8px;
-      transition: 0.3s background-color;
+      transition: background-color 0.3s ease, color 0.3s ease;
     }
     nav .nav-link:hover,
     nav .nav-link.active {
       background: var(--accent-1);
       color: #fff;
     }
-
-    /* Mobile menu toggle button */
     .menu-toggle {
-      display: none; /* Hidden on desktop */
+      display: none;
       background: none;
       border: none;
       font-size: 2rem;
@@ -155,10 +126,8 @@
       color: var(--accent-1);
       cursor: pointer;
     }
-
-    /* Main content area */
     #content {
-      margin-left: 230px; /* Leaves space for sidebar */
+      margin-left: 230px;
       padding: 50px 20px;
     }
     section {
@@ -171,25 +140,17 @@
       margin-left: auto;
       margin-right: auto;
       opacity: 0;
-      transform: translateY(40px);
-      transition: opacity 0.9s ease, transform 0.9s ease;
+      transform: translateY(30px);
+      transition: opacity 0.8s ease, transform 0.8s ease;
     }
     section.show {
       opacity: 1;
       transform: translateY(0);
     }
-
-    /* Home section with animated gradient background */
     @keyframes gradientShift {
-      0% {
-        background-position: 0% 50%;
-      }
-      50% {
-        background-position: 100% 50%;
-      }
-      100% {
-        background-position: 0% 50%;
-      }
+      0% { background-position: 0% 50%;}
+      50% { background-position: 100% 50%;}
+      100% { background-position: 0% 50%;}
     }
     #home {
       background: linear-gradient(270deg, #cde3fa, #fff3e0, #f68b8b, #5b97fa);
@@ -211,8 +172,6 @@
       text-shadow: 0 0 8px var(--accent-1);
       animation: glowPulse 2.5s infinite alternate;
     }
-
-    /* About section styles with flexible layout */
     .about-container {
       display: flex;
       gap: 30px;
@@ -227,8 +186,6 @@
     .about-text {
       max-width: 600px;
     }
-
-    /* Skills list */
     #skills ul {
       list-style: none;
       padding: 0;
@@ -237,8 +194,6 @@
       margin-bottom: 8px;
       font-size: 1.05rem;
     }
-
-    /* Certifications grid */
     .certifications-list {
       display: grid;
       grid-template-columns: repeat(auto-fit, minmax(170px, 1fr));
@@ -258,10 +213,10 @@
       overflow: hidden;
     }
     .certification-item img {
-      width: 130px;
+      width: 120px;
       border-radius: 12px;
       margin-bottom: 8px;
-      transition: 0.4s;
+      transition: transform 0.3s ease;
     }
     .certification-item:hover {
       transform: translateY(-12px) scale(1.07);
@@ -278,20 +233,13 @@
       left: -50%;
       width: 200%;
       height: 200%;
-      background: linear-gradient(
-        120deg,
-        transparent 40%,
-        rgba(255, 255, 255, 0.4) 50%,
-        transparent 60%
-      );
+      background: linear-gradient(120deg, transparent 40%, rgba(255, 255, 255, 0.4) 50%, transparent 60%);
       transform: rotate(25deg);
       transition: 0.8s;
     }
     .certification-item:hover::before {
       left: 100%;
     }
-
-    /* Resume button with glowing gradient and hover animation */
     .resume-view-wrap {
       text-align: center;
       margin-top: 25px;
@@ -326,12 +274,7 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(
-        120deg,
-        transparent,
-        rgba(255, 255, 255, 0.3),
-        transparent
-      );
+      background: linear-gradient(120deg, transparent, rgba(255, 255, 255, 0.3), transparent);
       transition: 0.8s;
     }
     .pulse-gradient-btn:hover {
@@ -341,8 +284,6 @@
     .pulse-gradient-btn:hover::after {
       left: 100%;
     }
-
-    /* Contact form styling */
     .contact-form {
       background: #f6faff;
       box-shadow: 0 4px 14px var(--shadow-color);
@@ -373,11 +314,9 @@
     .contact-form button:hover {
       background-color: var(--accent-2);
     }
-
-    /* Responsive styles for smaller screens */
     @media (max-width: 800px) {
       .side-navbar {
-        left: -240px; /* Hide sidebar by default */
+        left: -240px;
         width: 230px;
         height: 100%;
         position: fixed;
@@ -386,61 +325,76 @@
         z-index: 2000;
       }
       .side-navbar.open {
-        left: 0; /* Show sidebar when toggled */
+        left: 0;
         box-shadow: 0 0 25px rgba(0, 0, 0, 0.3);
       }
       #content {
-        margin-left: 0; /* Content takes full width when sidebar hidden */
+        margin-left: 0;
         padding: 20px;
       }
       .menu-toggle {
-        display: block; /* Show toggle button on mobile */
+        display: block;
         top: 18px;
         left: 18px;
       }
     }
-
     @media (max-width: 700px) {
       .about-container {
-        flex-direction: column; /* Stack about image and text vertically */
+        flex-direction: column;
         text-align: center;
       }
       .about-image img {
-        width: 150px; /* Smaller image on small screens */
+        width: 150px;
         margin-bottom: 15px;
       }
     }
-
     @media (max-width: 500px) {
       .certification-item img {
-        width: 100px; /* Smaller certification images on tiny screens */
+        width: 100px;
       }
       #home h1 {
-        font-size: 2rem; /* Smaller heading font size */
+        font-size: 2rem;
       }
       #typewriter {
-        font-size: 1rem; /* Smaller subheading font size */
+        font-size: 1rem;
       }
     }
-
     section {
-      padding: 20px 15px; /* Reduce padding on small screens */
+      padding: 20px 15px;
     }
-
     .contact-form {
-      width: 100%; /* Full width contact form on small devices */
+      width: 100%;
       max-width: 100%;
       box-shadow: 0 2px 8px rgba(91, 151, 250, 0.25);
     }
-
     .floating-icon {
-      width: 40px; /* Smaller floating icons on small devices */
+      width: 40px;
       height: 40px;
+    }
+    #page-loader {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: var(--bg-light);
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      z-index: 3000;
+      opacity: 1;
+      transition: opacity 0.5s ease;
+    }
+    #page-loader.hidden {
+      opacity: 0;
+      pointer-events: none;
     }
   </style>
 </head>
 <body>
-  <!-- Floating shapes: decorative elements that move slowly for a lively effect -->
+  <div id="page-loader">
+    <h2>Loading...</h2>
+  </div>
   <div class="floating-shapes">
     <span class="circle" style="left:10%; animation-delay:0s;"></span>
     <span class="triangle" style="left:40%; animation-delay:3s;"></span>
@@ -448,11 +402,7 @@
     <img src="ail.png" class="floating-icon glow-icon" style="left:20%; animation-delay:2s;" alt="Icon1" />
     <img src="database.png" class="floating-icon glow-icon" style="left:85%; animation-delay:4s;" alt="Icon2" />
   </div>
-
-  <!-- Mobile toggle button to show/hide sidebar on small screens -->
   <button class="menu-toggle" aria-label="Open navigation">☰</button>
-
-  <!-- Sidebar navigation with profile and menu links -->
   <aside class="side-navbar">
     <div class="sidebar-header">
       <img src="my photo.jpg" alt="Hariharan Rajendran" class="sidebar-photo" />
@@ -468,130 +418,56 @@
       <a href="#contact" class="nav-link">Contact</a>
     </nav>
   </aside>
-
-  <!-- Main content container -->
   <div id="content">
-    <!-- Home Section with animated gradient background -->
     <section id="home">
       <h1>HARIHARAN RAJENDRAN</h1>
       <p id="typewriter"></p>
     </section>
-
-    <!-- About Section: image + description -->
     <section id="about" class="about-container">
       <div class="about-image">
         <img src="my photo.jpg" alt="Hariharan Rajendran" />
       </div>
       <div class="about-text">
         <h2>About Me</h2>
-        <p>
-          <strong>Hariharan Rajendran</strong> is an innovative and
-          detail-driven third-year
-          <strong>B.Tech student in Artificial Intelligence and Data Science</strong>
-          with a <strong>CGPA of 7.99</strong>. Currently sharpening skills
-          through an <strong>advanced Data Analytics program</strong> to stay
-          ahead in the evolving tech landscape.
-        </p>
-        <p>
-          Curious, committed, and solution-oriented, ready to craft intelligent,
-          data-driven strategies that create real-world impact.
-        </p>
+        <p><strong>Hariharan Rajendran</strong> is an innovative and detail-driven third-year <strong>[translate:B.Tech student in Artificial Intelligence and Data Science]</strong> with a <strong>CGPA of 7.99</strong>. Currently sharpening skills through an <strong>advanced Data Analytics program</strong> to stay ahead in the evolving tech landscape.</p>
+        <p>Curious, committed, and solution-oriented, ready to craft intelligent, data-driven strategies that create real-world impact.</p>
       </div>
     </section>
-
-    <!-- Skills Section -->
     <section id="skills">
       <h2>Personal Skills & Internships</h2>
       <ul>
-        <li><b>Internship 1:</b> Data Analytics (MS Excel)</li>
-        <li><b>Internship 2:</b> Artificial Intelligence</li>
-        <li><b>Internship 3:</b> Machine Learning</li>
+        <li><b>Internship:</b> Data Analytics (MS Excel)</li>
         <li><b>HTML:</b> Full Knowledge</li>
         <li><b>Microsoft Office:</b> 80%</li>
         <li><b>Coding Languages:</b> Python (80%), JavaScript (70%)</li>
       </ul>
     </section>
-
-    <!-- Certifications with images and hover animations -->
     <section id="certifications">
       <h2>Certifications</h2>
       <ul class="certifications-list">
-        <li class="certification-item">
-          <img src="CELONIS ACADMEIC PROCESS.jpg" alt="Celonis Academic Process" />
-          <span>Celonis Academic Process</span>
-        </li>
-        <li class="certification-item">
-          <img src="CELONIS BUSINESS.jpg" alt="Celonis Business" />
-          <span>Celonis Business</span>
-        </li>
-        <li class="certification-item">
-          <img src="CELONIS FOUNDATION.jpg" alt="Celonis Foundation" />
-          <span>Celonis Foundation</span>
-        </li>
-        <li class="certification-item">
-          <img src="MONGODB BASIC.jpg" alt="MongoDB Basic" />
-          <span>MongoDB Basic</span>
-        </li>
-        <li class="certification-item">
-          <img src="MONGODB SQL.jpg" alt="MongoDB SQL" />
-          <span>MongoDB SQL</span>
-        </li>
-        <li class="certification-item">
-          <img src="CPP.jpg" alt="C++" />
-          <span>C++ - Spoken Tutorial</span>
-        </li>
-        <li class="certification-item">
-          <img src="DIPLOMA IN MICROSOFT.jpg" alt="Diploma in Microsoft" />
-          <span>Diploma in Microsoft</span>
-        </li>
-        <li class="certification-item">
-          <img src="ORACLE ERP.jpg" alt="Oracle ERP" />
-          <span>Oracle ERP</span>
-        </li>
-        <li class="certification-item">
-          <img src="ORACLE HCM.jpg" alt="Oracle HCM" />
-          <span>Oracle HCM</span>
-        </li>
-        <li class="certification-item">
-          <img src="C.jpg" alt="C Programming" />
-          <span>C Programming</span>
-        </li>
-        <li class="certification-item">
-          <img src="UPI.jpg" alt="UI Path Academic" />
-          <span>UI Path Academic</span>
-        </li>
-        <li class="certification-item">
-          <img src="start with microsoft page.jpg" alt="Microsoft" />
-          <span>Microsoft</span>
-        </li>
-        <li class="certification-item">
-          <img src="learn ai and gen ai basic page.jpg" alt="Microsoft AI" />
-          <span>Microsoft AI</span>
-        </li>
-        <li class="certification-item">
-          <img src="describe the concepts of cybersecurity page.jpg" alt="Cybersecurity" />
-          <span>Microsoft Cybersecurity</span>
-        </li>
-        <li class="certification-item">
-          <img src="mong db page.jpg" alt="MongoDB Basic" />
-          <span>MongoDB Basic</span>
-        </li>
-        <li class="certification-item">
-          <img src="Essentials Automation Certification.jpg" alt="Automation Anywhere" />
-          <span>Automation Anywhere</span>
-        </li>
-        <li class="certification-item">
-          <img src="certificate BIM page.jpg" alt="Graphisoft BIM" />
-          <span>Graphisoft BIM</span>
-        </li>
+        <li class="certification-item"><img src="CELONIS ACADMEIC PROCESS.jpg" alt="Celonis Academic Process" /><span>Celonis Academic Process</span></li>
+        <li class="certification-item"><img src="CELONIS BUSINESS.jpg" alt="Celonis Business" /><span>Celonis Business</span></li>
+        <li class="certification-item"><img src="CELONIS FOUNDATION.jpg" alt="Celonis Foundation" /><span>Celonis Foundation</span></li>
+        <li class="certification-item"><img src="MONGODB BASIC.jpg" alt="MongoDB Basic" /><span>MongoDB Basic</span></li>
+        <li class="certification-item"><img src="MONGODB SQL.jpg" alt="MongoDB SQL" /><span>MongoDB SQL</span></li>
+        <li class="certification-item"><img src="CPP.jpg" alt="C++" /><span>C++ - Spoken Tutorial</span></li>
+        <li class="certification-item"><img src="DIPLOMA IN MICROSOFT.jpg" alt="Diploma in Microsoft" /><span>Diploma in Microsoft</span></li>
+        <li class="certification-item"><img src="ORACLE ERP.jpg" alt="Oracle ERP" /><span>Oracle ERP</span></li>
+        <li class="certification-item"><img src="ORACLE HCM.jpg" alt="Oracle HCM" /><span>Oracle HCM</span></li>
+        <li class="certification-item"><img src="C.jpg" alt="C Programming" /><span>C Programming</span></li>
+        <li class="certification-item"><img src="UPI.jpg" alt="UI Path Academic" /><span>UI Path Academic</span></li>
+        <li class="certification-item"><img src="start with microsoft page.jpg" alt="Microsoft" /><span>Microsoft</span></li>
+        <li class="certification-item"><img src="learn ai and gen ai basic page.jpg" alt="Microsoft AI" /><span>Microsoft AI</span></li>
+        <li class="certification-item"><img src="describe the concepts of cybersecurity page.jpg" alt="Cybersecurity" /><span>Microsoft Cybersecurity</span></li>
+        <li class="certification-item"><img src="mong db page.jpg" alt="MongoDB Basic" /><span>MongoDB Basic</span></li>
+        <li class="certification-item"><img src="Essentials Automation Certification.jpg" alt="Automation Anywhere" /><span>Automation Anywhere</span></li>
+        <li class="certification-item"><img src="certificate BIM page.jpg" alt="Graphisoft BIM" /><span>Graphisoft BIM</span></li>
       </ul>
     </section>
-
-    <!-- Resume Section with download/view button -->
     <section id="resume">
       <h2>Resume</h2>
       <ul>
-        <li>B.Tech (AI & Data Science) — 3rd Year • CGPA: 7.99</li>
+        <li>[translate:B.Tech (AI & Data Science)] — 3rd Year • CGPA: 7.99</li>
         <li>Advanced Data Analytics program</li>
         <li>Skilled in HTML, CSS, JavaScript, Python, MS Office</li>
         <li>Internship at Novi Tech R&D Pvt Ltd</li>
@@ -601,14 +477,9 @@
         <a href="my resume.pdf" target="_blank" class="pulse-gradient-btn">👁 View My Resume</a>
       </div>
     </section>
-
-    <!-- Contact Section with basics and form -->
     <section id="contact">
       <h2>Contact</h2>
-      <p>
-        <b>Location:</b> 6/70, Kattukotai Maruthadi Naranamangalam (po),
-        Perambular, Tamilnadu-621109 INDIA
-      </p>
+      <p><b>Location:</b> 6/70, Kattukotai Maruthadi Naranamangalam (po), Perambular, Tamilnadu-621109 INDIA</p>
       <p><b>Email:</b> <a href="mailto:inhari2005@gmail.com">inhari2005@gmail.com</a></p>
       <p><b>Phone:</b> <a href="tel:+918838059374">8838059374</a></p>
       <h3>Send me a message</h3>
@@ -623,43 +494,42 @@
       </form>
     </section>
   </div>
-
   <script>
-    // # Toggle sidebar on mobile when menu button is clicked
+    window.addEventListener("load", () =>{
+      const loader = document.getElementById("page-loader");
+      loader.classList.add("hidden");
+      setTimeout(() => { loader.style.display = "none"; }, 600);
+    });
     const sidebar = document.querySelector(".side-navbar");
     const menuToggle = document.querySelector(".menu-toggle");
-    menuToggle.addEventListener("click", () => {
-      sidebar.classList.toggle("open");
-    });
-
-    // # Highlight active nav link on scroll
+    menuToggle.addEventListener("click", () => { sidebar.classList.toggle("open"); });
     const navLinks = document.querySelectorAll(".nav-link");
-    const sections = document.querySelectorAll("section");
+    navLinks.forEach((link) => {
+      link.addEventListener("click", () => {
+        if(window.innerWidth <= 800) { sidebar.classList.remove("open"); }
+      });
+    });
     window.addEventListener("scroll", () => {
+      const sections = document.querySelectorAll("section");
       sections.forEach((sec) => {
-        if (window.scrollY >= sec.offsetTop - 160) {
+        if(window.scrollY >= sec.offsetTop -160) {
           navLinks.forEach((link) => link.classList.remove("active"));
-          document
-            .querySelector(`.nav-link[href="#${sec.id}"]`)
-            ?.classList.add("active");
+          document.querySelector(`.nav-link[href="#${sec.id}"]`)?.classList.add("active");
         }
       });
     });
-
-    // # Animate sections when they enter viewport
     window.addEventListener("scroll", () => {
+      const sections = document.querySelectorAll("section");
       sections.forEach((sec) => {
-        if (sec.getBoundingClientRect().top < window.innerHeight - 80)
+        if(sec.getBoundingClientRect().top < window.innerHeight - 80) {
           sec.classList.add("show");
+        }
       });
     });
-
-    // # Typewriter effect for homepage tagline text
-    const text =
-      "B.Tech Artificial Intelligence and Data Science Student at MAM School of Engineering";
+    const text = "[translate:B.Tech Artificial Intelligence and Data Science Student at MAM School of Engineering]";
     let i = 0;
     function typeWriter() {
-      if (i < text.length) {
+      if(i < text.length) {
         document.getElementById("typewriter").innerHTML += text.charAt(i);
         i++;
         setTimeout(typeWriter, 60);
